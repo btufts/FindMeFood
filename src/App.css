@@ -12,3 +12,8 @@
   font-style: italic;
   margin: 2% 0% 2% 0%;
 }
+
+.markerStyle {
+  background-color: blue;
+  color: blue;
+}

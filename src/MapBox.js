@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import './App.css';
 
 
 class MapBox extends Component {
@@ -23,9 +24,9 @@ class MapBox extends Component {
                     {isRest ? (
                         <Marker position={{lat: this.props.businessLat, lng: this.props.businessLng}}/>
                     ) : (
-                        <Marker position={{lat: this.props.lat, lng: this.props.lng}}/>
+                        <Marker icon = {'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'} position={{lat: this.props.lat, lng: this.props.lng}}/>
                     )}
-                    <Marker position={{lat: this.props.lat, lng: this.props.lng}}/>     
+                    <Marker icon = {'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'} position={{lat: this.props.lat, lng: this.props.lng}}/>     
                 </Map>
 
         );

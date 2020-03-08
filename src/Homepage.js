@@ -124,7 +124,7 @@ class Homepage extends Component {
     }
 
     searchRest = () => {
-        let link = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=' + this.state.latitude + '&longitude=' + this.state.longitude + '&open_now=true' +'&limit=50';
+        let link = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=' + this.state.latitude + '&longitude=' + this.state.longitude + '&open_now=true' + '&limit=50';
 
         if(this.state.price !== '0'){
             link += '&price=' + this.state.price;

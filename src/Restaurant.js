@@ -83,7 +83,7 @@ class Restaurant extends Component {
         return (
             <div className = "Restaurant"> { this.props.locCheck ? ( this.props.searched ? ( isRest ? (
                 <div className = "infoStyle"> 
-                        <a href = {this.state.yelpBusinessURL} target="_blank" className = "titleRest">{this.state.businessName}</a>
+                        <a href = {this.state.yelpBusinessURL} target="_blank" rel = 'noopener noreferrer' className = "titleRest">{this.state.businessName}</a>
                         <p className = "priceRest">{this.state.businessPrice}</p>
                         <p id = "rateRest">{this.state.businessRating} stars</p>
                         <p className = "addRest">{this.state.businessAddress[0]}</p>
@@ -96,7 +96,7 @@ class Restaurant extends Component {
                     <p></p>
                 )) : (
                 <div>
-                    <h3>Your location could not be found.</h3>
+                    <h3>Your location could not be found, make sure you are connecting via https.</h3>
                 </div>
             )}
                 
