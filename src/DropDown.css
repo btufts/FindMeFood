@@ -1,0 +1,32 @@
+#radDropStyle {
+    border: none;
+    color: black;
+    background-color: #05d5ff;
+    transition: all .2s ease-in-out;
+}
+
+#radDropStyle:hover {
+    transform: scale(1.1);
+}
+
+#priceDropStyle {
+    border: none;
+    color: black;
+    background-color: #05d5ff;
+    transition: all .2s ease-in-out;
+}
+
+#priceDropStyle:hover {
+    transform: scale(1.1);
+}
+
+#catDropStyle {
+    border: none;
+    color: black;
+    background-color: #05d5ff;
+    transition: all .2s ease-in-out;
+}
+
+#catDropStyle:hover {
+    transform: scale(1.1);
+}

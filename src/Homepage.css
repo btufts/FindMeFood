@@ -1,0 +1,80 @@
+.homePage {
+    height: 100%;
+    width: 100%;
+}
+
+.filters {
+    margin: 2% 2% 3% 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.dropFilter { 
+    margin: 0 1% 0 1%;
+}
+
+.controls {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+}
+
+.searchButton {
+    margin-bottom: 2%;
+    height: 40px;
+    width: 120px;
+    background-color: white;
+    border: 2px solid #05d5ff;
+    color:black;
+    transition: background-color .2s ease-in;
+    transition: all .2s ease-in-out;
+    border-radius: 25px;
+}
+
+.searchButton:active {
+    transform: translate(0px, 2px);
+}
+
+.searchButton:hover {
+    background-color: #05d5ff;
+    transform: scale(1.1);
+}
+
+.card {
+    margin: 0 auto;
+    height: 650px;
+    text-align: center;
+    width: 35%;
+}
+
+.controls button:hover {
+    background-color: #05d5ff;
+}
+
+.controls button {
+    background-color: white;
+    border: 2px solid #05d5ff;
+    color:black;
+    transition: background-color .2s ease-in;
+}
+
+.controls button:active {
+    transform: translate(0px, 3px);
+}
+
+.mapFormat {
+    position: absolute;
+    display: block;
+    height: 60%;
+    width: 100%;
+    transition: .3s;
+}
+
+.mapFormat:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+}
+
