@@ -16,10 +16,10 @@ class Restaurant extends Component {
     }
 
     rando () {
-        let rand = 0;
+        const min = 0;
+        const max = this.props.info.length;
+        let rand = Math.floor(min + Math.random() * (max - min));
         while(this.state.previous.includes(rand)){
-            const min = 0;
-            const max = this.props.info.length;
             rand = Math.floor(min + Math.random() * (max - min));
         }
         return rand;
@@ -32,8 +32,7 @@ class Restaurant extends Component {
                 previous: this.state.previous.splice(0, this.state.previous.length),
             });
             this.pickRest(rand);
-        }
-        
+        } 
     }
 
     pickRest = (selection) => {
@@ -75,23 +74,29 @@ class Restaurant extends Component {
     }
 
     render () {   
-        let isRest = false;
-        if(this.state.businessName !== ''){
-            isRest = true;
+        let isRest = true;
+
+        if(this.state.businessName === ''){
+            isRest = false;
         }
-        console.log(this.state.previous);
+
         return (
-            <div className = "Restaurant"> { isRest ? (
+            <div className = "Restaurant"> { this.props.locCheck ? ( this.props.searched ? ( isRest ? (
                 <div className = "infoStyle"> 
-                    <p className = "titleRest">{this.state.businessName}</p>
-                    <p className = "priceRest">{this.state.businessPrice}</p>
-                    <p id = "rateRest">{this.state.businessRating} stars</p>
-                    <p className = "addRest">{this.state.businessAddress[0]}</p>
-                    <p className = "addRest">{this.state.businessAddress[1]}</p>
-                    <p className = "phoneRest">Phone: {this.state.businessPhone}</p>
-                </div>
-            ) : (
+                        <a href = {this.state.yelpBusinessURL} target="_blank" className = "titleRest">{this.state.businessName}</a>
+                        <p className = "priceRest">{this.state.businessPrice}</p>
+                        <p id = "rateRest">{this.state.businessRating} stars</p>
+                        <p className = "addRest">{this.state.businessAddress[0]}</p>
+                        <p className = "addRest">{this.state.businessAddress[1]}</p>
+                        <p className = "phoneRest">Phone: {this.state.businessPhone}</p>
+                    </div>
+                ) : (
+                    <h3>No restaurant could be found.</h3>
+                )) : (
+                    <p></p>
+                )) : (
                 <div>
+                    <h3>Your location could not be found.</h3>
                 </div>
             )}
                 

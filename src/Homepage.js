@@ -6,6 +6,7 @@ import Radius from './Radius';
 import './Homepage.css';
 import MapBox from './MapBox';
 import Categories from './Categories';
+import './Restaurant.css';
 
 class Homepage extends Component {
     
@@ -20,6 +21,7 @@ class Homepage extends Component {
             businessLat: "",
             businessLng: "",
             category: "",
+            searched: false,
         }
     }
 
@@ -122,7 +124,7 @@ class Homepage extends Component {
     }
 
     searchRest = () => {
-        let link = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=' + this.state.latitude + '&longitude=' + this.state.longitude + '&open_now=true';
+        let link = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=' + this.state.latitude + '&longitude=' + this.state.longitude + '&open_now=true' +'&limit=50';
 
         if(this.state.price !== '0'){
             link += '&price=' + this.state.price;
@@ -141,38 +143,49 @@ class Homepage extends Component {
                 'Authorization': `Bearer nW2vtGMV9ihJd3dh6w1pHJBBSO09nkl2RWmwEcxGfUNEkCEz4b9kiBHqyZfj9GZnKuqcPPWSKM6attAbcG3ZhC0wmmUeL7iBei2EyxvGqU_OfIzLMgPpPaKPd3VUXnYx`,
             }
         }).then(data => {
-            console.log(data);
             this.setState ({
                 selection: data["data"]["businesses"],
             })
         })
+        this.setState ({
+            searched: true,
+        });
     }
 
     componentDidMount() {
         this.testLocation();
     }
 
+
     render () {
+        let locCheck = true;
+
+        if(this.state.longitude === "-12.3113" && this.state.latitude === "-37.0680"){
+            locCheck = false;
+        }
+
         return (
             <div className = "homePage">
                 <div className = "filters">
-                    <div className = "dropFilter">
-                        <Price className = "dropFilter" onChange = {this.onChangePrice}/>
+                    <h2>Filters:</h2>
+                    <div className = "priceDropFilter">
+                        <Price className = "priceDropFilter" onChange = {this.onChangePrice}/>
                     </div>
-                    <div className = "dropFilter">
-                        <Radius className = "dropFilter" onChange = {this.onChangeRadius}/>
+                    <div className = "radDropFilter">
+                        <Radius className = "radDropFilter" onChange = {this.onChangeRadius}/>
                     </div>
-                    <div className = "dropFilter">
-                        <Categories className = "dropFilter" onChange = {this.onChangeCategory}/>
+                    <div className = "catDropFilter">
+                        <Categories className = "catDropFilter" onChange = {this.onChangeCategory}/>
                     </div>
+                    <button className = "searchButton" onClick = {this.searchRest}>Search</button>
                 </div>
-                <button className = "searchButton" onClick = {this.searchRest}>Search</button>
+                
                 <div className = "card">
                     <div className = "mapFormat">
                         <MapBox lat = {this.state.latitude} lng = {this.state.longitude} businessLat = {this.state.businessLat} businessLng = {this.state.businessLng} />
                     </div>
-                    <div className = "controls">
-                        <Restaurant info = {this.state.selection} onChange = {this.setBusinessLocation}/>
+                    <div className = "controls"> 
+                        <Restaurant info = {this.state.selection} onChange = {this.setBusinessLocation} locCheck = {locCheck} searched = {this.state.searched}/>
                     </div>
                 </div>
             </div>
