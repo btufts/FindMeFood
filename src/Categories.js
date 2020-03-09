@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import { DropdownButton, Dropdown} from 'react-bootstrap';
 import './DropDown.css'
 
+/**
+ * Handles changes of the category filter
+ */
 class Categories extends Component {
+    /**
+     * Constructs initial state of category filter
+     * @param {*} props 
+     */
     constructor (props) {
         super(props);
         this.state = {
@@ -10,6 +17,9 @@ class Categories extends Component {
         }
     }
 
+    /**
+     * Changes catTitle to whatever item was selected
+     */
     handleChange = (selection) => {
         this.setState ({
             catTitle: selection,
@@ -17,6 +27,9 @@ class Categories extends Component {
         this.props.onChange(selection);
     }
 
+    /**
+     * Creates the dropdown button and all the items
+     */
     render () {
 
         return (

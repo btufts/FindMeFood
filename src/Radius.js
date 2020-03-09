@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import { DropdownButton, Dropdown} from 'react-bootstrap';
 import './DropDown.css';
 
+/**
+ * Handles changes to the radius filter
+ */
 class Radius extends Component {
+    /**
+     * Constructs initial state for radius filter
+     * @param {} props 
+     */
     constructor (props) {
         super(props);
         this.state = {
@@ -10,6 +17,9 @@ class Radius extends Component {
         }
     }
 
+    /**
+     * Changes the radiusTitle to whatever item was selected
+     */
     handleChange = (selection) => {
         this.setState ({
             radiusTitle: selection,
@@ -17,6 +27,9 @@ class Radius extends Component {
         this.props.onChange(selection);
     }
 
+    /**
+     * Creates dropdown button and all of the items
+     */
     render () {
 
         return (

@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import { DropdownButton, Dropdown} from 'react-bootstrap';
 import './DropDown.css';
 
+/**
+ * Handles changes to the price filter
+ */
 class Price extends Component {
+    /**
+     * Constructs initial state for price filter
+     * @param {} props 
+     */
     constructor (props) {
         super(props);
         this.state = {
@@ -10,6 +17,9 @@ class Price extends Component {
         }
     }
 
+    /**
+     * Changes priceTitle to whatever item was selected
+     */
     handleChange = (selection) => {
         this.setState ({
             priceTitle: selection,
@@ -17,6 +27,9 @@ class Price extends Component {
         this.props.onChange(selection);
     }
 
+    /**
+     * Creates the dropdown button and all of the items
+     */
     render () {
 
         return (
