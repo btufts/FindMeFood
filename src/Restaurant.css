@@ -33,7 +33,7 @@
 .infoStyle {
     display: inline-block;
     color: black;
-    font-size: 28px;
+    font-size: 200%;
     font-family: Georgia;
 
 }
@@ -43,7 +43,7 @@
     padding: 0;
 }
 
-.priceRest {
+#priceRest {
     font-size: 15px;
 }
 
@@ -52,10 +52,11 @@
     margin-bottom: 1em;
 }
 
-.addRest {
+#addRest {
+    width: 20%;
     font-size: 20px;
 }
 
-.phoneRest {
-    font-size: 17px;
+#phoneRest {
+    font-size: 14px;
 }
