@@ -25,7 +25,6 @@ class Categories extends Component {
                 <Dropdown.Item eventKey = "Asian Fusion">Asian Fusion</Dropdown.Item>
                 <Dropdown.Item eventKey = "Bistro">Bistro</Dropdown.Item>
                 <Dropdown.Item eventKey = "Buffet">Buffet</Dropdown.Item>
-                <Dropdown.Item eventKey = "Cafe">Cafe</Dropdown.Item>
                 <Dropdown.Item eventKey = "Chinese">Chinese</Dropdown.Item>
                 <Dropdown.Item eventKey = "Diners">Diners</Dropdown.Item>
                 <Dropdown.Item eventKey = "Indian">Indian</Dropdown.Item>

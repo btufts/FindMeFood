@@ -115,3 +115,10 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
 }
 
+.homePage p {
+    margin: 0 5% 0 5%;
+    font-size: 1.5em;
+    font-style: italic;
+    font-family: Georgia;
+}
+

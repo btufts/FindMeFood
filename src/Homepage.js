@@ -71,8 +71,6 @@ class Homepage extends Component {
             category = "bistros"
         } else if (c === "Buffet"){
             category = "buffets"
-        } else if (c === "Cafe"){
-            category = "cafes"
         } else if (c === "Chinese"){
             category = "chinese"
         } else if (c === "Diners"){
@@ -187,6 +185,12 @@ class Homepage extends Component {
                     <div className = "controls"> 
                         <Restaurant info = {this.state.selection} onChange = {this.setBusinessLocation} locCheck = {locCheck} searched = {this.state.searched}/>
                     </div>
+                </div>
+                <div>
+                    <p>These days we are bombarded by far too many restaurant options, making the decision on where to eat more complicated than it needs to be. 
+                        This program enables the user to just put in specifcations of what they want and be given a random place to go to that meets their criteria, 
+                        simplifying the entire process. If they don't like that place, they can click next to be given a new random restaurant that also meets their 
+                        criteria.</p>
                 </div>
             </div>
         );
