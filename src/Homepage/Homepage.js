@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Price from "./Price";
+import Price from "./Components/DropDowns/Price";
 import axios from 'axios';
-import Restaurant from './Restaurant';
-import Radius from './Radius';
+import Restaurant from './Components/Restaurant';
+import Radius from './Components/DropDowns/Radius';
 import './Homepage.css';
-import MapBox from './MapBox';
-import Categories from './Categories';
-import './Restaurant.css';
+import MapBox from './Components/MapBox';
+import Categories from './Components/DropDowns/Categories';
+import './Components/Restaurant.css';
 
 /**
  * Class handles the ordering of everything on the homepage and the get requests

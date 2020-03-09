@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Homepage from './Homepage';
+import Homepage from './Homepage/Homepage';
 
 /**
  * Returns the completed web application to be rendered by index.js
