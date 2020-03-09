@@ -82,10 +82,11 @@
 
 .card {
     margin: 0 auto;
-    height: 650px;
+    height: 100%;
     text-align: center;
     width: 100%;
     grid-column-start: 2;
+    overflow: auto;
 }
 
 .controls button:hover {
