@@ -120,8 +120,8 @@ class Restaurant extends Component {
                         <a href = {this.state.yelpBusinessURL} target="_blank" rel = 'noopener noreferrer' className = "titleRest">{this.state.businessName}</a>
                         <p id = "priceRest">{this.state.businessPrice}</p>
                         <p id = "rateRest">{this.state.businessRating} stars</p>
-                        <p id = "addRest">{this.state.businessAddress[0]} 2325 Stoneridge rd</p>
-                        <p id = "addRest">{this.state.businessAddress[1]}Winchester VA 22601</p>
+                        <p id = "addRest">{this.state.businessAddress[0]}</p>
+                        <p id = "addRest">{this.state.businessAddress[1]}</p>
                         <p id = "phoneRest">Phone: {this.state.businessPhone}</p>
                     </div>
                 ) : (
